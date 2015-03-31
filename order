@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift("./lib")
+
+require "flowershop"
+
+OrderCommand.new(
+  argv: ARGV,
+  stdin: $stdin,
+  stdout: $stdout,
+  stderr: $stderr,
+).call
