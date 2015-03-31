@@ -1,0 +1,3 @@
+#!/bin/bash
+set -eou pipefail
+diff -u output.txt <(./order < input.txt)
