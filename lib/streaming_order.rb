@@ -1,12 +1,17 @@
 class StreamingOrder
 
-  def initialize(input)
+  def initialize(input, stderr)
     @input = input
+    @stderr = stderr
   end
 
   def each
     @input.each_line do |line|
-      yield OrderItem.parse(line)
+      begin
+        yield OrderItem.parse(line)
+      rescue => e
+        @stderr.puts "#{e.class}: #{e.message}"
+      end
     end
   end
 

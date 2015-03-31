@@ -6,7 +6,7 @@ class OrderItem
     if match = PATTERN.match(line)
       new(quantity: Integer(match[1]), code: match[2])
     else
-      raise ParseError, "Invalid input: #{line}"
+      raise ParseError, "Malformed input: '#{line.chop}'"
     end
   end
 

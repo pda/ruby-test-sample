@@ -18,7 +18,7 @@ class OrderCommand
   end
 
   def order
-    StreamingOrder.new(@stdin)
+    StreamingOrder.new(@stdin, @stderr)
   end
 
   def catalog

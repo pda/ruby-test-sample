@@ -23,7 +23,11 @@ class InvoiceItem
   private
 
   def bundler
-    ProductBundler.new(@catalog, @code, @quantity)
+    ProductBundler.new(product, @quantity)
+  end
+
+  def product
+    @catalog.find(@code)
   end
 
 end

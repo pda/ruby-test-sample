@@ -12,4 +12,12 @@ class BundleLine
     bundle.price * @quantity
   end
 
+  def total_quantity
+    bundle.size * @quantity
+  end
+
+  def inspect
+    "#<%s %dx%d %s>" % [self.class, quantity, bundle.size, bundle.code]
+  end
+
 end
